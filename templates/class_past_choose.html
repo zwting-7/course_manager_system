@@ -1,0 +1,42 @@
+{% extends "base_stu.html" %}
+
+{% block styles %}
+    <link href="/class_view.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block page_content %}
+<div class="choose">
+    <div class="choose-year">
+        <ul>
+            <li>
+                <a href="/course/year/2020s">2020春</a>
+            </li>
+            <li>
+                <a href="/course/year/2020a">2020秋</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr/>
+<table>
+    <tr>
+        <th>课程名</th>
+        <th>老师名</th>
+        <th>上课时间</th>
+        <th>节数</th>
+        <th>备注</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ item.cou_name }}</td>
+        <td>{{ item.teacher_name }}</td>
+        <td>{{ item.weeks }}</td>
+        <td>{{ item.lessons }}</td>
+        <td>{{ item.remark }}</td>
+    </tr>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

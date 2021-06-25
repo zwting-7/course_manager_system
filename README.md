@@ -1,6 +1,4 @@
-[README.md](https://github.com/zwting-7/course_manager_system/files/6717226/README.md)
-# course_manager_system
-a course manager system(version 1.0) 
+
 ### 尝试制作课程管理系统
 #### 目标
 1. 按用户类型分为学生端、教师端、管理者端
@@ -10,3 +8,6 @@ a course manager system(version 1.0)
 5. 管理者端提供课程计划和成绩查询
 6. 学生端默认账号及密码为101，101；教师端默认账号及密码为101，101；管理者端默认账号及密码为manager，888
 ##### 还有很多要改进的地方！！！会继续尝试！！！
+
+
+

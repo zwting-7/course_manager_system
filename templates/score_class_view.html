@@ -1,0 +1,42 @@
+{% extends "base_man.html" %}
+
+{% block styles %}
+    <link href="/class_view.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block page_content %}
+<div class="choose">
+    <div class="course-choose-class">
+        <ul>
+            <li>
+                <a href="/score">2020年春季学期</a>
+            </li>
+            <li>
+                <a href="/score/2020a">2020年秋季学期</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr/>
+<table>
+    <tr>
+        <th>学期</th>
+        <th>班级</th>
+        <th>姓名</th>
+        <th>课程</th>
+        <th>成绩</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ item.schedule_year }}</td>
+        <td>{{ item.class_name }}</td>
+        <td>{{ item.stu_name }}</td>
+        <td>{{ item.cou_name }}</td>
+        <td>{{ item.grade }}</td>
+    </tr>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

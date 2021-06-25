@@ -1,0 +1,65 @@
+{% extends "base_man.html" %}
+
+{% block styles %}
+    <link href="/class_view.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block page_content %}
+<div class="paper">
+    <form class="course-form" action="/action/course_add" method="post">
+        <label>班级：</label>
+        <select name="class_sn">
+            <option value="">--选择--</option>
+            {% for classes in classes %}
+            <option value="{{classes.class_sn}}">
+                {{classes.class_name}}({{classes.class_sn}})
+            </option>
+            {% endfor %}
+        </select>
+
+        <label>学期：</label>
+        <input type="text" name="schedule_year" />
+
+        <label>课程名：</label>
+        <input type="text" name="cou_name" />
+
+        <input type="submit" value="添加计划" />
+    </form>
+<hr />
+<div class="choose">
+    <div class="course-choose-class">
+        <ul>
+            <li>
+                <a href="/plan">信息</a>
+            </li>
+            <li>
+                <a href="/plan/xinxih">信息H</a>
+            </li>
+            <li>
+                <a href="/plan/ruanjian">软件</a>
+            </li>
+            <li>
+                <a href="/plan/ruanjianh">软件H</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr/>
+<table>
+    <tr>
+        <th>班级</th>
+        <th>学期</th>
+        <th>课程名</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ item.class_name }}</td>
+        <td>{{ item.schedule_year }}</td>
+        <td>{{ item.cou_name }}</td>
+    </tr>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
